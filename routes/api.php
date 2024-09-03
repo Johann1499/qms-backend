@@ -10,10 +10,12 @@ use App\Models\Admin;
 Route::post('/queues', [QueueController::class, 'store']);
 Route::get('/queues/generate-queue-number', [QueueController::class, 'generateQueueNumberForRequest']);
 Route::get('/queues', [QueueController::class, 'index']);
+Route::get('/queues/count-by-department', [QueueController::class, 'getQueueCountByDepartment']);
 Route::delete('/queues/{id}', [QueueController::class, 'destroy']);
 
 Route::get('/cashiers', [CashierController::class, 'index']);
 Route::get('cashiers/inactive', [CashierController::class, 'getInactiveCashiers']);
+Route::get('cashiers/total-by-department-status', [CashierController::class, 'getCashierCountByDepartment']);
 Route::get('cashiers/{id}/status', [CashierController::class, 'getStatus']);
 Route::put('/cashiers/{id}/status', [CashierController::class, 'updateStatus']);
 Route::post('/cashiers', [CashierController::class, 'store']);

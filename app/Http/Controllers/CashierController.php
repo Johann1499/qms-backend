@@ -27,6 +27,18 @@ class CashierController extends Controller
     return response()->json(['status' => $cashier->status]);
     }
 
+    public function getCashierCountByDepartment()
+    {
+    // Query to get counts grouped by department and status
+    $counts = Cashier::selectRaw('department, status, COUNT(*) as total')
+                    ->groupBy('department', 'status')
+                    ->get();
+
+    // Return the counts as JSON
+    return response()->json($counts);
+    }
+
+
     
 
     public function store(Request $request)

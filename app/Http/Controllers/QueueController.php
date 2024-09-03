@@ -75,14 +75,21 @@ public function store(Request $request)
     return response()->json([
         'message' => 'Record stored successfully',
     ], 201);
-}
+    }
 
 
+    
+    public function getQueueCountByDepartment()
+    {
+    $counts = Queue::selectRaw('department, COUNT(*) as total')
+                    ->groupBy('department')
+                    ->get();
+
+    return response()->json($counts);
+    }
 
 
-
-
-
+    
     public function destroy($id)
     {
         // Find the queue record by ID
