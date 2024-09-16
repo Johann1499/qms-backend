@@ -160,4 +160,20 @@ public function store(Request $request)
 
         return $formattedQueueNumber;
     }
+    public function getQueueData()
+    {
+        // Fetch the current and next 3 queue numbers from the database
+        $currentQueueCollege = Queue::where('department', 'College')->orderBy('id', 'asc')->first();
+        $nextQueueCollege = Queue::where('department', 'College')->orderBy('id', 'asc')->skip(1)->take(3)->get();
+
+        $currentQueueBasic = Queue::where('department', 'Basic Education')->orderBy('id', 'asc')->first();
+        $nextQueueBasic = Queue::where('department', 'Basic Education')->orderBy('id', 'asc')->skip(1)->take(3)->get();
+
+        return response()->json([
+            'currentQueueCollege' => $currentQueueCollege ? $currentQueueCollege->queue_number : 'No Data',
+            'nextQueueCollege' => $nextQueueCollege->pluck('queue_number')->toArray(),  // Return as array
+            'currentQueueBasic' => $currentQueueBasic ? $currentQueueBasic->queue_number : 'No Data',
+            'nextQueueBasic' => $nextQueueBasic->pluck('queue_number')->toArray(),  // Return as array
+        ]);
+    }
 }

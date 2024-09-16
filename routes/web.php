@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\Template\Template;
+use App\Http\Controllers\QueueController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TemplateController::class, 'index']);
+Route::get('/get-queue-data', [QueueController::class, 'getQueueData'])->name('getQueueData');
