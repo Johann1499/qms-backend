@@ -14,51 +14,58 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
 </head>
 
 <body>
 
-    <!-- ***** Queue Monitoring Area Start (in Welcome Area) ***** -->
-    <div class="welcome-area" id="monitor">
-        <div class="header-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h1>Dominican College of Tarlac</h1>
-                    </div>
-                </div>
-                <!-- Start of Queue Area -->
-                <div class="row queue-area">
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                        <div class="queue-label">Now Serving (Basic Education)</div>
-                        <div class="queue-number" id="currentQueueNumberBasic">Loading...</div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                        <div class="queue-label">Now Serving (College)</div>
-                        <div class="queue-number" id="currentQueueNumberCollege">Loading...</div>
-                    </div>
-                </div>
+    <!-- ***** Queue Monitoring Area Start ***** -->
+    <div class="container">
+        <!-- College Name -->
+        <header class="text-center mb-5">
+            <h1 id="queue-monitor-title" class="display-4 queue-monitor-title">Dominican College of Tarlac</h1>
+        </header>
 
-                <!-- Display Next 3 Queue Numbers -->
-                <div class="row queue-area">
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                        <div class="queue-label">Next in Line (Basic Education)</div>
-                        <div class="queue-number small" id="nextQueueNumberBasic1">Loading...</div>
-                        <div class="queue-number small" id="nextQueueNumberBasic2">Loading...</div>
-                        <div class="queue-number small" id="nextQueueNumberBasic3">Loading...</div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                        <div class="queue-label">Next in Line (College)</div>
-                        <div class="queue-number small" id="nextQueueNumberCollege1">Loading...</div>
-                        <div class="queue-number small" id="nextQueueNumberCollege2">Loading...</div>
-                        <div class="queue-number small" id="nextQueueNumberCollege3">Loading...</div>
-                    </div>
-                </div>
-                <!-- End of Queue Area -->
+        <!-- Now Serving Section -->
+        <section class="mb-5 queue-area">
+            <div class="text-center mb-4">
+                <h2 class="display-4 queue-monitor-title">Now Serving</h2>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-4">
+                    <h3 class="queue-label">Basic Education</h3>
+                    <p class="queue-number display-3" id="currentQueueNumberBasic" aria-live="polite">Loading...</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-4">
+                    <h3 class="queue-label">College</h3>
+                    <p class="queue-number display-3" id="currentQueueNumberCollege" aria-live="polite">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next in Line Section -->
+        <section class="queue-area">
+            <div class="text-center mb-4">
+                <h2 class="display-4 queue-monitor-title">Next in Line</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-4">
+                    <h3 class="queue-label">Basic Education</h3>
+                    <p class="queue-number small mb-2" id="nextQueueNumberBasic1" aria-live="polite">Loading...</p>
+                    <p class="queue-number small mb-2" id="nextQueueNumberBasic2" aria-live="polite">Loading...</p>
+                    <p class="queue-number small" id="nextQueueNumberBasic3" aria-live="polite">Loading...</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-4">
+                    <h3 class="queue-label">College</h3>
+                    <p class="queue-number small mb-2" id="nextQueueNumberCollege1" aria-live="polite">Loading...</p>
+                    <p class="queue-number small mb-2" id="nextQueueNumberCollege2" aria-live="polite">Loading...</p>
+                    <p class="queue-number small" id="nextQueueNumberCollege3" aria-live="polite">Loading...</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!-- ***** Queue Monitoring Area End ***** -->
 
@@ -74,4 +81,3 @@
 </body>
 
 </html>
-``

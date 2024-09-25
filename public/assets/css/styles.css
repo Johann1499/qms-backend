@@ -1,0 +1,89 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e39df3;
+}
+
+.queue-number {
+    font-size: 4vw; /* Use viewport width for responsiveness */
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.queue-number.small {
+    font-size: 3vw;
+}
+
+.queue-monitor-title{
+    font-weight: bold;
+    font-size: 4vw;
+    color: #333;
+}
+
+.queue-label {
+    font-size: 2vw;
+    font-weight: 500;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.queue-area {
+    margin-top: 30px;
+    margin: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .queue-number {
+        font-size: 6vw;
+    }
+
+    .queue-label {
+        font-size: 3vw;
+    }
+
+    .queue-area {
+        padding: 15px;
+    }
+    .queue-monitor-title{
+        font-weight: bold;
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .queue-number {
+        font-size: 8vw;
+    }
+
+    .queue-number.small {
+        font-size: 6vw;
+    }
+
+    .queue-label {
+        font-size: 4vw;
+    }
+
+    .queue-area {
+        padding: 10px;
+    }
+    .queue-monitor-title{
+        font-weight: bold;
+        font-size: 6vw;
+    }
+}
+.small {
+    font-size: 1.25rem;
+}
+.container {
+    padding-top: 50px;
+    background-color: #e39df3;
+}
